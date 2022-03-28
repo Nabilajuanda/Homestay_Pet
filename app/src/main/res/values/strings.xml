@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Homestay Pet</string>
+    <string name="Intro_HomePet">Homestay Pet adalah solusi bagi kamu yang ingin menitipkan hewan peliharaanmu!
+    \nSilakan isi data hewan kesayangan kamu di bawah.</string>
+    <string name="nama">Nama :</string>
+    <string name="spesies">Spesies</string>
+    <string name="anjing">Anjing</string>
+    <string name="kucing">Kucing</string>
+    <string name="hari">Berapa lama</string>
+    <string name="jumlah_hari">1 hari</string>
+    <string name="pilihanMakan">Pilihan Makan</string>
+    <string name="bawaSendiri">Bawa Sendiri</string>
+    <string name="pengurus">Disediakan oleh pengurus</string>
 </resources>
