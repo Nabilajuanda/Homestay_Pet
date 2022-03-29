@@ -2,13 +2,38 @@
     <string name="app_name">Homestay Pet</string>
     <string name="Intro_HomePet">Homestay Pet adalah solusi bagi kamu yang ingin menitipkan hewan peliharaanmu!
     \nSilakan isi data hewan kesayangan kamu di bawah.</string>
-    <string name="nama">Nama :</string>
+    <string name="nama">Nama</string>
+    <string name="info">Ketik di sini</string>
+    <string name="nama_invalid">nama tidak boleh kosong</string>
     <string name="spesies">Spesies</string>
+
+    /* ----------------------------------------------- */
+    /* String untuk radio button */
     <string name="anjing">Anjing</string>
     <string name="kucing">Kucing</string>
+    <string name="notPilihan">Tidak ada dalam pilihan</string>
+
+    /* ----------------------------------------------- */
+    /* String untuk memunculkan data pilihan */
+    <string name="dataNama" formatted="true">Nama : %1$s</string>
+
+    /* ----------------------------------------------- */
+    /* String untuk formulir */
     <string name="hari">Berapa lama</string>
+    <string name="pilihanMakan">Pilihan makan</string>
+    <string name="pengurus">Pengurus</string>
+
+    /* ------------------------------------------------ */
+    /* array spinner hari menitip hewan */
     <string name="jumlah_hari">1 hari</string>
-    <string name="pilihanMakan">Pilihan Makan</string>
-    <string name="bawaSendiri">Bawa Sendiri</string>
-    <string name="pengurus">Disediakan oleh pengurus</string>
+
+    /* array spinner pilihanMakan */
+    <string-array name="pilihan">
+        <item>Bawa Sendiri</item>
+        <item>Disediakan oleh pengurus</item>
+    </string-array>
+
+    /* ------------------------------------------------- */
+
+    <string name="tombolKirim">Kirim</string>
 </resources>
