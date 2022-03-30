@@ -21,32 +21,53 @@ class MainActivity : AppCompatActivity() {
 
     private fun dataHewan() {
         // Input nama hewan
-        val namaHewan = binding.pilihanEditText.text.toString()
+        val namaHewan = binding.namaEditText.text.toString()
         if (TextUtils.isEmpty(namaHewan)) {
             Toast.makeText(this, R.string.nama_invalid, Toast.LENGTH_LONG).show()
             return
         }
 
-        // Check radio button kucing atau anjing
         val selectedId = binding.radioGroup.checkedRadioButtonId
-        val isCat = selectedId == R.id.kucingButton
-        val hargaKucing = 20000
-        val pilihan = getPilihan(hargaKucing, isCat)
+        if (selectedId == -1) {
+            Toast.makeText(this, R.string.spesies_invalid, Toast.LENGTH_LONG).show()
+            return
+        }
 
-        binding.dataNamaTextView.text = getString(R.string.dataNama, pilihan)
+        // Check radio button kucing atau anjing
+        val isCat = selectedId == R.id.kucingButton
+        val isDog = selectedId == R.id.anjingButton
+        val spesies = "kucing"
+        val pilihan = getPilihan(spesies, isCat, isDog)
+        binding.dataSpesiesTextView.text = getString(R.string.dataSpesies, pilihan)
+
+        // Input nama hewan peliharaan
+        val nama: String = namaHewan
+        val inputNama = getInputNama(nama)
+        binding.dataNamaTextView.text = getString(R.string.dataNama, inputNama)
+
+        // Input berapa lama menginap
+
+
     }
 
-    private fun getPilihan(pilihan: Int, isCat: Boolean): String {
+    private fun getInputNama(inputNama: String): String {
+        println(inputNama)
+        return inputNama
+    }
+
+    private fun getPilihan(pilihan: String, isCat: Boolean, isDog: Boolean): String {
         val stringRes = if(isCat) {
             when {
-                pilihan == 20000 -> R.string.kucing
+                pilihan == "kucing" -> R.string.kucing
+                else -> R.string.anjing
+            }
+        } else if(isDog) {
+            when {
+                pilihan == "anjing" -> R.string.anjing
                 else -> R.string.notPilihan
             }
         } else {
-            when {
-                pilihan == 25000 -> R.string.anjing
-                else -> R.string.notPilihan
-            }
+            R.string.anjing
         }
         return getString(stringRes)
     }

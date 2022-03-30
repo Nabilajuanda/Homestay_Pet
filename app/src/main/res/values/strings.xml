@@ -6,6 +6,7 @@
     <string name="info">Ketik di sini</string>
     <string name="nama_invalid">nama tidak boleh kosong</string>
     <string name="spesies">Spesies</string>
+    <string name="spesies_invalid">Spesies tidak boleh kosong</string>
 
     /* ----------------------------------------------- */
     /* String untuk radio button */
@@ -16,6 +17,9 @@
     /* ----------------------------------------------- */
     /* String untuk memunculkan data pilihan */
     <string name="dataNama" formatted="true">Nama : %1$s</string>
+    <string name="dataSpesies" formatted="true">Spesies : %1$s</string>
+    <string name="dataHari" formatted="true">Berapa lama : %1$s</string>
+    <string name="dataMakan" formatted="true">Pilihan makan : %1$s</string>
 
     /* ----------------------------------------------- */
     /* String untuk formulir */
