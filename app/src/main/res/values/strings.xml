@@ -24,18 +24,18 @@
     /* ----------------------------------------------- */
     /* String untuk formulir */
     <string name="hari">Berapa lama</string>
+    <string name="hari_invalid">Lama menginap tidak boleh kosong</string>
     <string name="pilihanMakan">Pilihan makan</string>
+    <string name="pilihanMakan_invalid">Pilihan pemberian makan tidak boleh kosong</string>
     <string name="pengurus">Pengurus</string>
 
     /* ------------------------------------------------ */
     /* array spinner hari menitip hewan */
-    <string name="jumlah_hari">1 hari</string>
+    <string name="jumlah_hari">hari</string>
 
     /* array spinner pilihanMakan */
-    <string-array name="pilihan">
-        <item>Bawa Sendiri</item>
-        <item>Disediakan oleh pengurus</item>
-    </string-array>
+    <string name="pilihan_Makan1">Bawa Sendiri</string>
+    <string name="pilihan_Makan2">Disediakan oleh pengurus</string>
 
     /* ------------------------------------------------- */
 
