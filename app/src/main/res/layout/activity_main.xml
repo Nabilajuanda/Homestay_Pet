@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/introTextView"
@@ -27,6 +31,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:hint="@string/nama2"
         android:contentDescription="@string/info"
         android:ems="10"
         android:inputType="textPersonName"
@@ -36,17 +41,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/introTextView"
         tools:ignore="EditableContentDescCheck" />
-
-    <TextView
-        android:id="@+id/spesiesTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/spesies"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/namaTextView"
@@ -60,33 +54,6 @@
         app:layout_constraintTop_toTopOf="@+id/namaEditText"
         app:layout_constraintVertical_bias="0.363" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="223dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/spesiesTextView"
-        app:layout_constraintTop_toBottomOf="@+id/namaEditText">
-
-        <RadioButton
-            android:id="@+id/kucingButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/kucing" />
-
-        <RadioButton
-            android:id="@+id/anjingButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/anjing" />
-    </RadioGroup>
-
     <TextView
         android:id="@+id/hariTextView"
         android:layout_width="0dp"
@@ -98,29 +65,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/berapaHariNumber" />
 
-    <TextView
-        android:id="@+id/pilihanMakanTextView2"
-        android:layout_width="0dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/pilihanMakan"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/radioGroup2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/radioGroup2" />
-
     <Button
         android:id="@+id/kirimButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="@string/tombolKirim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+        app:layout_constraintTop_toBottomOf="@+id/berapaHariNumber" />
 
     <View
         android:id="@+id/divider"
@@ -144,17 +100,6 @@
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <TextView
-        android:id="@+id/dataSpesiesTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/spesies"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dataNamaTextView" />
-
-    <TextView
         android:id="@+id/dataHariTextView"
         android:layout_width="119dp"
         android:layout_height="24dp"
@@ -163,18 +108,7 @@
         android:text="@string/hari"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dataSpesiesTextView" />
-
-    <TextView
-        android:id="@+id/dataPilihanMakanTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/pilihanMakan"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dataHariTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/dataNamaTextView" />
 
     <EditText
         android:id="@+id/berapaHariNumber"
@@ -189,33 +123,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/hariTextView"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/namaEditText" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/dataHargaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.959"
-        app:layout_constraintStart_toEndOf="@+id/pilihanMakanTextView2"
-        app:layout_constraintTop_toBottomOf="@+id/berapaHariNumber">
-
-        <RadioButton
-            android:id="@+id/bawaSendirButton"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/pilihan_Makan1" />
-
-        <RadioButton
-            android:id="@+id/pengurusButton"
-            android:layout_width="125dp"
-            android:layout_height="match_parent"
-            android:text="@string/pilihan_Makan2" />
-    </RadioGroup>
+        android:layout_marginTop="8dp"
+        android:text="@string/harga"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataHariTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

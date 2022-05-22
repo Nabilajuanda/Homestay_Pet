@@ -1,41 +1,28 @@
 <resources>
     <string name="app_name">Homestay Pet</string>
-    <string name="Intro_HomePet">Homestay Pet adalah solusi bagi kamu yang ingin menitipkan hewan peliharaanmu!
-    \nSilakan isi data hewan kesayangan kamu di bawah.</string>
+    <string name="Intro_HomePet">Homestay Pet adalah solusi bagi kamu yang ingin menitipkan kucing peliharaanmu!
+    \nSilakan isi data kucing kesayangan kamu di bawah.</string>
     <string name="nama">Nama</string>
+    <string name="nama2">nama kucing</string>
     <string name="info">Ketik di sini</string>
     <string name="nama_invalid">nama tidak boleh kosong</string>
-    <string name="spesies">Spesies</string>
-    <string name="spesies_invalid">Spesies tidak boleh kosong</string>
 
     /* ----------------------------------------------- */
     /* String untuk radio button */
-    <string name="anjing">Anjing</string>
     <string name="kucing">Kucing</string>
-    <string name="notPilihan">Tidak ada dalam pilihan</string>
 
     /* ----------------------------------------------- */
     /* String untuk memunculkan data pilihan */
-    <string name="dataNama" formatted="true">Nama : %1$s</string>
-    <string name="dataSpesies" formatted="true">Spesies : %1$s</string>
-    <string name="dataHari" formatted="true">Berapa lama : %1$s</string>
-    <string name="dataMakan" formatted="true">Pilihan makan : %1$s</string>
+    <string name="dataNama" formatted="true">Nama: %1$s</string>
+    <string name="dataHari" formatted="true">Berapa lama: %1$s hari</string>
+    <string name="harga">Harga</string>
+    <string name="dataHarga" formatted="true">Harga: %1$s</string>
 
     /* ----------------------------------------------- */
     /* String untuk formulir */
     <string name="hari">Berapa lama</string>
     <string name="hari_invalid">Lama menginap tidak boleh kosong</string>
-    <string name="pilihanMakan">Pilihan makan</string>
-    <string name="pilihanMakan_invalid">Pilihan pemberian makan tidak boleh kosong</string>
-    <string name="pengurus">Pengurus</string>
-
-    /* ------------------------------------------------ */
-    /* array spinner hari menitip hewan */
     <string name="jumlah_hari">hari</string>
-
-    /* array spinner pilihanMakan */
-    <string name="pilihan_Makan1">Bawa Sendiri</string>
-    <string name="pilihan_Makan2">Disediakan oleh pengurus</string>
 
     /* ------------------------------------------------- */
 
