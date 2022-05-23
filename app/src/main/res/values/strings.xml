@@ -25,6 +25,9 @@
     <string name="jumlah_hari">hari</string>
 
     /* ------------------------------------------------- */
+    <string name="homestay_info">Homestay Pet adalah tempat penitipan kucing yang dapat anda percaya
+    \nUntuk lanjut hubungi 0000-1111-2222</string>
 
     <string name="tombolKirim">Kirim</string>
+    <string name="tentang_kami">Tentang Kami</string>
 </resources>
