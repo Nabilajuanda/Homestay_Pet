@@ -1,15 +1,16 @@
-package org.d3if4056.homestaypet.ui
+package org.d3if4056.homestaypet.ui.hitung
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if4056.homestaypet.R
 import org.d3if4056.homestaypet.databinding.FragmentHitungBinding
+import org.d3if4056.homestaypet.db.PetDb
 import org.d3if4056.homestaypet.model.HasilData
 
 class HitungFragment : Fragment() {
@@ -17,7 +18,9 @@ class HitungFragment : Fragment() {
     private lateinit var binding: FragmentHitungBinding
 
     private val viewModel: HitungViewModel by lazy {
-        ViewModelProvider(requireActivity())[HitungViewModel::class.java]
+        val db = PetDb.getInstance(requireContext())
+        val factory = HitungViewModelFactory(db.dao)
+        ViewModelProvider(this, factory)[HitungViewModel::class.java]
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +33,8 @@ class HitungFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.kirimButton.setOnClickListener { dataHewan() }
+        binding.bagikanButton.setOnClickListener { shareData() }
+
         viewModel.getHasilData().observe(requireActivity(), { showResult(it) })
     }
 
@@ -39,10 +44,17 @@ class HitungFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.menu_about) {
-            findNavController().navigate(
-                R.id.action_hitungFragment_to_aboutFragment)
-            return true
+        when(item.itemId) {
+            R.id.menu_histori -> {
+                findNavController().navigate(
+                    R.id.action_hitungFragment_to_historiFragment)
+                return true
+            }
+            R.id.menu_about -> {
+                findNavController().navigate(
+                    R.id.action_hitungFragment_to_aboutFragment)
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -72,7 +84,11 @@ class HitungFragment : Fragment() {
         val lamaMenginap = getLamaMenginap(hari)
         binding.dataHariTextView.text = getString(R.string.dataHari, lamaMenginap)
 
-        viewModel.hitungHarga(nama, hari.toInt())
+        // Mengambil data dari ViewModel
+        viewModel.hitungHarga(
+            nama,
+            hari.toInt()
+        )
     }
 
     private fun getInputNama(inputNama: String): String {
@@ -91,5 +107,17 @@ class HitungFragment : Fragment() {
         binding.dataNamaTextView.text = getString(R.string.dataNama, result.nama)
         binding.dataHariTextView.text = getString(R.string.dataHari, result.hari.toString())
         binding.dataHargaTextView.text = getString(R.string.dataHarga, result.harga.toString())
+        binding.bagikanButton.visibility = View.VISIBLE
+    }
+
+    private fun shareData() {
+        val message = getString(R.string.bagikan_template)
+
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
+        if(shareIntent.resolveActivity(
+                requireActivity().packageManager) != null) {
+            startActivity(shareIntent)
+        }
     }
 }
