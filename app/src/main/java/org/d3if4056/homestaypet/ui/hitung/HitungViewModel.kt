@@ -35,11 +35,12 @@ class HitungViewModel(private val db: PetDao) : ViewModel() {
         }
     }
 
-    fun hitungHarga(nama: String, hari: Int) {
+    fun hitungHarga(nama: String, hari: Int, imageId: String) {
 
         val dataPet = PetEntity(
             nama = nama,
-            hari = hari
+            hari = hari,
+            imageId = imageId
         )
         hasilData.value = dataPet.hitungHarga()
 

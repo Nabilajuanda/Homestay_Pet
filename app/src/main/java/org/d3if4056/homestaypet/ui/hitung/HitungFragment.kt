@@ -84,10 +84,14 @@ class HitungFragment : Fragment() {
         val lamaMenginap = getLamaMenginap(hari)
         binding.dataHariTextView.text = getString(R.string.dataHari, lamaMenginap)
 
+        val imageId: String = namaHewan
+        binding.dataNamaTextView.text = getString(R.string.dataNama)
+
         // Mengambil data dari ViewModel
         viewModel.hitungHarga(
             nama,
-            hari.toInt()
+            hari.toInt(),
+            imageId
         )
     }
 

@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.ListAdapter
+import com.bumptech.glide.Glide
 import org.d3if4056.homestaypet.R
 import org.d3if4056.homestaypet.databinding.ItemHistoriBinding
 import org.d3if4056.homestaypet.db.PetEntity
 import org.d3if4056.homestaypet.model.hitungHarga
+import org.d3if4056.homestaypet.network.HasilApi
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -52,6 +54,11 @@ class HistoriAdapter:
         fun bind(item: PetEntity) = with(binding) {
 
             val hasilData = item.hitungHarga()
+
+            Glide.with(imageView.context)
+                .load(HasilApi.getGambarUrl(item.imageId))
+                .error(R.drawable.ic_baseline_broken_image_24)
+                .into(imageView)
 
             tanggalTextView.text = dataFormatter.format(Date(item.tanggal))
 

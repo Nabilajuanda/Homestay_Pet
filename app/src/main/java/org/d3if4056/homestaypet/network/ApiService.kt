@@ -27,4 +27,8 @@ object HasilApi {
     val service: ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
+
+    fun getGambarUrl(nama: String): String {
+        return "$BASE_URL$nama.jpg"
+    }
 }

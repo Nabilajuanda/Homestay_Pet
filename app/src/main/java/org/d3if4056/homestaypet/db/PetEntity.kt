@@ -9,5 +9,6 @@ data class PetEntity (
     var id: Long = 0L,
     var tanggal: Long = System.currentTimeMillis(),
     var nama: String,
-    var hari: Int
+    var hari: Int,
+    var imageId: String
 )

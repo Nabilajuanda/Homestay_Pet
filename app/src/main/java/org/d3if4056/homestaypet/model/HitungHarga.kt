@@ -6,5 +6,5 @@ fun PetEntity.hitungHarga(): HasilData {
 
         val harga = hari * 20000
 
-    return HasilData(nama, hari, harga.toFloat())
+    return HasilData(nama, hari, harga.toFloat(), imageId)
 }
