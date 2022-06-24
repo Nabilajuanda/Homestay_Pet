@@ -1,10 +1,14 @@
 package org.d3if4056.homestaypet.ui.histori
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingWorkPolicy
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -12,6 +16,8 @@ import org.d3if4056.homestaypet.db.PetDao
 import org.d3if4056.homestaypet.model.HasilData
 import org.d3if4056.homestaypet.network.ApiStatus
 import org.d3if4056.homestaypet.network.HasilApi
+import org.d3if4056.homestaypet.network.UpdateWorker
+import java.util.concurrent.TimeUnit
 
 class HistoriViewModel(private val db: PetDao) : ViewModel() {
     val data = db.getLastPet()
@@ -44,4 +50,16 @@ class HistoriViewModel(private val db: PetDao) : ViewModel() {
     }
 
     fun getStatus(): LiveData<ApiStatus> = status
+
+    fun scheduleUpdater(app: Application) {
+        val request = OneTimeWorkRequestBuilder<UpdateWorker>()
+            .setInitialDelay(1, TimeUnit.MINUTES)
+            .build()
+
+        WorkManager.getInstance(app).enqueueUniqueWork(
+            "updater",
+            ExistingWorkPolicy.REPLACE,
+            request
+        )
+    }
 }
