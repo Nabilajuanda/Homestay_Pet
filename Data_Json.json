@@ -1,5 +1,6 @@
 {
   "nama": "Nana",
   "hari": 3,
-  "harga": 10.0
+  "harga": 10.0,
+  "imageId": "kucing"
 }
