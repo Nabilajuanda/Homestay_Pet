@@ -18,6 +18,8 @@ class HitungViewModel(private val db: PetDao) : ViewModel() {
 
     private val hasilData = MutableLiveData<HasilData?>()
 
+    private val data = MutableLiveData<List<HasilData>>()
+
     init {
         retrieveData()
     }
@@ -26,8 +28,7 @@ class HitungViewModel(private val db: PetDao) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
 
             try {
-                val result = HasilApi.service.getData()
-                Log.d("HitungViewModel", "Success: $result")
+                data.postValue(HasilApi.service.getData())
             } catch (e: Exception) {
                 Log.d("HitungViewModel", "Failure: ${e.message}")
             }
