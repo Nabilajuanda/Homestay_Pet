@@ -12,6 +12,7 @@ import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.d3if4056.homestaypet.MainActivity
 import org.d3if4056.homestaypet.db.PetDao
 import org.d3if4056.homestaypet.model.HasilData
 import org.d3if4056.homestaypet.network.ApiStatus
@@ -57,7 +58,7 @@ class HistoriViewModel(private val db: PetDao) : ViewModel() {
             .build()
 
         WorkManager.getInstance(app).enqueueUniqueWork(
-            "updater",
+            MainActivity.CHANNEL_ID,
             ExistingWorkPolicy.REPLACE,
             request
         )

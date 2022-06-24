@@ -32,6 +32,9 @@
     <string name="anak_kucing">untuk mendapatkan gambar, \nisi kolom nama dengan: kucing</string>
     <string name="koneksi_error">Koneksi Error</string>
 
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update data hewan otomatis</string>
+
     <string name="tombolKirim">Kirim</string>
     <string name="tentang_kami">Tentang Kami</string>
     <string name="histori">Histori</string>
