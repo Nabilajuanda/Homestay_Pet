@@ -10,6 +10,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.d3if4056.homestaypet.R
 import org.d3if4056.homestaypet.databinding.FragmentHistoriBinding
 import org.d3if4056.homestaypet.db.PetDb
+import org.d3if4056.homestaypet.network.ApiStatus
 
 class HistoriFragment : Fragment() {
 
@@ -43,6 +44,25 @@ class HistoriFragment : Fragment() {
                     View.VISIBLE else View.GONE
                 myAdapter.submitList(it)
             })
+        }
+
+        viewModel.getStatus().observe(viewLifecycleOwner, {
+            updateProgress(it)
+        })
+    }
+
+    private fun updateProgress(status: ApiStatus) {
+        when(status) {
+            ApiStatus.LOADING -> {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            ApiStatus.SUCCESS -> {
+                binding.progressBar.visibility = View.GONE
+            }
+            ApiStatus.FAILED -> {
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
         }
     }
 

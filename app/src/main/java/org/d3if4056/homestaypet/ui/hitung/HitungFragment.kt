@@ -12,6 +12,7 @@ import org.d3if4056.homestaypet.R
 import org.d3if4056.homestaypet.databinding.FragmentHitungBinding
 import org.d3if4056.homestaypet.db.PetDb
 import org.d3if4056.homestaypet.model.HasilData
+import org.d3if4056.homestaypet.network.ApiStatus
 
 class HitungFragment : Fragment() {
 

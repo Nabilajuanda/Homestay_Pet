@@ -32,3 +32,5 @@ object HasilApi {
         return "$BASE_URL$nama.jpg"
     }
 }
+
+enum class ApiStatus { LOADING, SUCCESS, FAILED }

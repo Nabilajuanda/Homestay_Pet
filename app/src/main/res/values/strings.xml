@@ -30,6 +30,7 @@
     <string name="bagikan_template">Aplikasi Homestay Pet</string>
     <string name="swipe_ke_atas">Silakan swipe ke atas</string>
     <string name="anak_kucing">untuk mendapatkan gambar, \nisi kolom nama dengan: kucing</string>
+    <string name="koneksi_error">Koneksi Error</string>
 
     <string name="tombolKirim">Kirim</string>
     <string name="tentang_kami">Tentang Kami</string>

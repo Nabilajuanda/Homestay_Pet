@@ -12,28 +12,12 @@ import org.d3if4056.homestaypet.db.PetDao
 import org.d3if4056.homestaypet.db.PetEntity
 import org.d3if4056.homestaypet.model.HasilData
 import org.d3if4056.homestaypet.model.hitungHarga
+import org.d3if4056.homestaypet.network.ApiStatus
 import org.d3if4056.homestaypet.network.HasilApi
 
 class HitungViewModel(private val db: PetDao) : ViewModel() {
 
     private val hasilData = MutableLiveData<HasilData?>()
-
-    private val data = MutableLiveData<List<HasilData>>()
-
-    init {
-        retrieveData()
-    }
-
-    private fun retrieveData() {
-        viewModelScope.launch(Dispatchers.IO) {
-
-            try {
-                data.postValue(HasilApi.service.getData())
-            } catch (e: Exception) {
-                Log.d("HitungViewModel", "Failure: ${e.message}")
-            }
-        }
-    }
 
     fun hitungHarga(nama: String, hari: Int, imageId: String) {
 
